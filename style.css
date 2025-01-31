@@ -1,0 +1,51 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: url('assets/farm-background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+    color: white; /* Change font color to white */
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Adjust the opacity to 90% */
+    z-index: 1;
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+    padding: 40px;
+    background-color: rgba(244,244,244,0.04); /* Set transparency to 20% */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Add shadow outside the border */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2; /* Ensure the container is above the overlay */
+    position: relative;
+}
+
+input[type="email"], input[type="password"], input[type="submit"] {
+    background-color: rgba(255, 255, 255, 0.2); /* Set transparency */
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Semi-transparent border */
+    color: white; /* White text color */
+    padding: 10px;
+    border-radius: 4px;
+    margin: 10px 0;
+    width: 100%;
+}
+
+input[type="email"]::placeholder, input[type="password"]::placeholder {
+    color: rgba(255, 255, 255, 0.7); /* Semi-transparent placeholder text */
+}

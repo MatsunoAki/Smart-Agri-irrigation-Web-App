@@ -1,0 +1,80 @@
+html, body {
+    overflow: hidden; /* Prevents scrolling */
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('/public/assets/farm-background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    box-sizing: border-box;
+    color: white; /* Font color set to white */
+    position: fixed; /* Ensures the body remains fixed */
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+#logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 200px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    z-index: 3; /* Ensure it is above other elements */
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+    padding: 40px;
+    background-color: rgba(244,244,244,0.09); /* Container background with 4% opacity */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8); /* Shadow effect */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2; /* Ensure the container is above the overlay */
+    position: relative;
+}
+
+input[type="email"], input[type="password"], input[type="submit"] {
+    background-color: rgba(255, 255, 255, 0.2); /* Input background with 20% opacity */
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Semi-transparent border */
+    color: white; /* White text color */
+    padding: 10px;
+    border-radius: 4px;
+    margin: 10px 0;
+    width: 100%;
+}
+
+input[type="email"]::placeholder, input[type="password"]::placeholder {
+    color: rgba(255, 255, 255, 0.7); /* Semi-transparent placeholder text */
+}
+
+/* Media query for phone screens */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+        max-width: 95%;
+    }
+
+    input[type="email"], input[type="password"], input[type="submit"] {
+        padding: 8px;
+        margin: 8px 0;
+    }
+
+    body {
+        overflow: hidden; /* Prevent scrolling */
+    }
+}

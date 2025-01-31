@@ -1,51 +1,47 @@
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+html, body {
+    overflow: hidden; /* Prevents scrolling */
+    width: 100vw;
     height: 100vh;
     margin: 0;
-    background: url('assets/farm-background.jpg') no-repeat center center fixed;
-    background-size: cover;
-    position: relative;
-    color: white; /* Change font color to white */
+    padding: 0;
+    background: url('/public/assets/index-background.jpg') no-repeat center center fixed;
+    background-size: cover;  /* Ensures the image covers the entire screen */
+    background-position: center;  /* Centers the image */
+    background-repeat: no-repeat;  /* Prevents tiling */
+    background-attachment: fixed;  /* Keeps it fixed when scrolling */
+    box-sizing: border-box;
+    color: rgba(0, 0, 0, 0.7); /* Font color set to washed black */
+    position: fixed; /* Ensures the body remains fixed */
 }
 
-body::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7); /* Adjust the opacity to 90% */
-    z-index: 1;
+#logo {
+    width: 200px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
 }
 
-.container {
-    width: 100%;
-    max-width: 400px;
-    padding: 40px;
-    background-color: rgba(244,244,244,0.04); /* Set transparency to 20% */
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Add shadow outside the border */
+
+.smart-scroll {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    z-index: 2; /* Ensure the container is above the overlay */
-    position: relative;
+    padding: 10px 20px;
 }
 
-input[type="email"], input[type="password"], input[type="submit"] {
-    background-color: rgba(255, 255, 255, 0.2); /* Set transparency */
-    border: 1px solid rgba(255, 255, 255, 0.5); /* Semi-transparent border */
-    color: white; /* White text color */
-    padding: 10px;
-    border-radius: 4px;
-    margin: 10px 0;
-    width: 100%;
+.navbar-expand-lg .navbar-brand {
+    margin-right: auto; /* Pushes the brand to the left */
 }
 
-input[type="email"]::placeholder, input[type="password"]::placeholder {
-    color: rgba(255, 255, 255, 0.7); /* Semi-transparent placeholder text */
+.navbar-expand-lg .navbar-collapse {
+    margin-left: auto; /* Pushes the collapse to the right */
+    display: flex;
+    justify-content: flex-end; /* Ensures the collapse content is aligned to the right */
+    padding-right: 100px;
+}
+
+.nav-item {
+    margin-right: 20px; /* Adds 20px spacing to the right of each nav-item */
+}
+
+.nav-link {
+    color: rgba(0, 0, 0, 0.7); /* Font color set to washed black */
 }
